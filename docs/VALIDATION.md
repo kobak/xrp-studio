@@ -10,6 +10,15 @@
 - A helyi Pages-előnézetben a szimuláció betölt és ténylegesen végrehajtja a blokkprogramot (30 cm mozgás, távolság 141 → 111 cm).
 - Magyar/angol nyelvváltás, mentés újratöltésen át, Python-oldalsáv, kapcsolat nélküli vezetésindítás letiltása és statikus osztálytermi tájékoztató ellenőrizve.
 
+## Éles GitHub Pages
+
+A [39245500282 számú GitHub Actions-futás](https://github.com/kobak/xrp-studio/actions/runs/39245500282) sikeresen tesztelt, buildelt és telepített. A [nyilvános oldalon](https://kobak.github.io/xrp-studio/) böngészőben ellenőrizve:
+
+- A valódi Python-értelmező és az elkülönített worker betölt a Pages alútvonaláról, konzolhiba nélkül.
+- A kezdő blokkprogram 30 cm-es mozgást hajt végre, a távolság 141-ről 111 cm-re változik.
+- Magyar nyelvváltás, tanulófeladat megnyitása és négyzetprogram futtatása sikeres; visszatérés a kiindulópontra.
+- A frissítések a `main` ágra küldött változtatásokból automatikusan települnek.
+
 ## Automatizált
 
 `npm run check` sikeres: 12/12 Node-teszt, majd sikeres Vite kiadási build. A tanulóprogramos teszt a hat feladatot magyar és angol blokkbeállításokkal is lefordítja és tényleges Python/Pyodide értelmezőben futtatja.
@@ -42,6 +51,6 @@ A Google-hitelesítő csak a tesztfolyamatban helyettesített. Élő Google-bel�
 - Élő Google-fiókos belépés: nincs megadva Google OAuth Client ID.
 - Fizikai robot: a gépen nem jelent meg XRP USB-soros eszköz.
 - Valódi iPad/Bluefy és Bluetooth-rádiókapcsolat.
-- Éles domain, TLS és Docker-konténeres telepítés.
+- A szerveres osztályterem éles domainje, TLS-e és Docker-konténeres telepítése. A statikus GitHub Pages-oldal éles működése ellenőrizve.
 
 Az elvégzendő éles próbák a [ACCEPTANCE.md](ACCEPTANCE.md) fájlban szerepelnek. A tabletelrendezés és a protokolltesztek nem helyettesítik a fizikai eszközpróbát.
