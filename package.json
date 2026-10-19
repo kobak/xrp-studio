@@ -1,0 +1,38 @@
+{
+  "name": "xrp-studio",
+  "version": "1.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "predev": "node scripts/prepare-runtime.js",
+    "dev": "node server/index.js",
+    "prebuild": "node scripts/prepare-runtime.js",
+    "build": "vite build",
+    "start": "NODE_ENV=production node server/index.js",
+    "test": "node --test tests/*.test.js",
+    "check": "npm run test && npm run build",
+    "build:pages": "BASE_PATH=/xrp-studio/ VITE_STATIC_SITE=true npm run build",
+    "preview:pages": "node scripts/preview-pages.js"
+  },
+  "dependencies": {
+    "@codemirror/lang-python": "^6.2.1",
+    "@codemirror/view": "^6.38.0",
+    "blockly": "^12.3.1",
+    "codemirror": "^6.0.2",
+    "express": "^5.1.0",
+    "google-auth-library": "^10.3.0",
+    "helmet": "^8.1.0",
+    "lucide-react": "^0.468.0",
+    "pyodide": "^0.28.3",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.4",
+    "prettier": "^3.9.10",
+    "vite": "^7.1.7"
+  },
+  "engines": {
+    "node": ">=22.13"
+  }
+}

@@ -1,0 +1,29 @@
+services:
+  studio:
+    build: .
+    restart: unless-stopped
+    environment:
+      GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:?Set GOOGLE_CLIENT_ID}
+      APP_ORIGIN: https://${STUDIO_DOMAIN:?Set STUDIO_DOMAIN}
+    volumes:
+      - studio-data:/app/data
+    expose:
+      - "4173"
+  caddy:
+    image: caddy:2
+    restart: unless-stopped
+    environment:
+      STUDIO_DOMAIN: ${STUDIO_DOMAIN:?Set STUDIO_DOMAIN}
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+      - caddy-data:/data
+      - caddy-config:/config
+    depends_on:
+      - studio
+volumes:
+  studio-data:
+  caddy-data:
+  caddy-config:

@@ -1,0 +1,4 @@
+{$STUDIO_DOMAIN} {
+  reverse_proxy studio:4173
+  encode zstd gzip
+}

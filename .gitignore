@@ -1,0 +1,10 @@
+node_modules/
+dist/
+data/
+.env
+*.log
+public/pyodide/
+
+.DS_Store
+.env.*
+!.env.example
